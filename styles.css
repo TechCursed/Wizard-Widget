@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wizard-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+
+.wizard-container .wiz-card {
+    height: 416px; /* 20% decrease */
+    width: 666px; /* 20% decrease */
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 16px;
+}
+
+.wizard-container .wiz-card .form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* ... continued from previous CSS ... */
+
+.wizard-container .wiz-card .left-side {
+   width: 32%; /* 20% decrease */
+   background-color: #304767;
+   height: 100%;
+   border-top-left-radius: 16px;
+   border-bottom-left-radius: 16px;
+   padding: 16px 24px;
+   box-sizing: border-box;
+}
+
+/* left-side-start */
+.left-heading {
+   color: #fff;
+}
+
+.steps-content {
+   margin-top: 5px;
+   color: #fff;
+}
+
+.steps-content p {
+   font-size: 9.6px;
+}
+
+.progress-bar {
+   list-style: none;
+   margin-top: 24px;
+   font-size: 10.4px;
+   font-weight: 700;
+   counter-reset: container 0;
+}
+
+.progress-bar li {
+   position: relative;
+   margin-left: 25.6px; /* 20% decrease */
+   margin-top: 29.6px; /* 20% decrease */
+   counter-increment: container 1;
+   color: #4f6581;
+}
+
+.progress-bar li::before {
+   content: counter(container);
+   line-height: 16px; /* 20% decrease */
+   text-align: center;
+   position: absolute;
+   height: 16px; /* 20% decrease */
+   width: 16px; /* 20% decrease */
+   border: 0.8px solid #4f6581; /* 20% decrease */
+   border-radius: 50%;
+   left: -25.6px; /* 20% decrease */
+   top: -3.2px; /* 20% decrease */
+   z-index: 10;
+   background-color: #304767;
+}
+.progress-bar li::after {
+   content: '';
+   position: absolute;
+   height: 57.6px; /* 20% decrease */
+   width: 1.6px; /* 20% decrease */
+   background-color: #4f6581;
+   z-index: 1;
+   left: -19.2px; /* 20% decrease */
+   top: -45.6px; /* 20% decrease */
+}
+.progress-bar li.active::after {
+   background-color: #fff;
+}
+.progress-bar li:first-child:after {
+   display: none;
+}
+.progress-bar li.active::before {
+   color: #fff;
+   border: 0.8px solid #fff; /* 20% decrease */
+}
+.progress-bar li.active {
+   color: #fff;
+}
+.d-none {
+   display: none;
+}
+/* left-side-end */
+
+.wizard-container .wiz-card .right-side {
+   width: 68%; /* 20% decrease */
+   background-color: #fff;
+   height: 100%;
+   border-radius: 16px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+/* right-side-start */
+.main {
+   display: none;
+   padding: 25.6px; /* 20% decrease */
+   flex-grow: 1;
+}
+
+.active {
+   display: flex;
+   flex-direction: column;
+}
+
+.content {
+   flex-grow: 1;
+}
+
+.main small {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1.6px; /* 20% decrease */
+   height: 19.2px; /* 20% decrease */
+   width: 19.2px; /* 20% decrease */
+   background-color: #ccc;
+   border-radius: 50%;
+   color: yellow;
+   font-size: 12.16px; /* 20% decrease */
+}
+
+.text {
+   margin-top: 12.8px; /* 20% decrease */
+}
+
+.congrats {
+    text-align: center;
+    font-size: 16px; /* 20% decrease */
+}
+
+h2 {
+    margin-top: 8px; /* 20% decrease */
+}
+
+.text p {
+    margin-top: 6.4px; /* 20% decrease */
+    font-size: 12x;
+    font-weight: 700;
+}
+
+.input-text {
+    margin: 19.2px 0; /* 20% decrease */
+    display: flex;
+    gap: 12.8px; /* 20% decrease */
+}
+
+.input-text .input-div {
+    width: 100%;
+    position: relative;
+}
+
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    height: 25.6px; /* 20% decrease */
+    border: none;
+    outline: 0;
+    border-radius: 3.2px; /* 20% decrease */
+    border: 0.8px solid #cbced4;
+    gap: 12.8px; /* 20% decrease */
+    box-sizing: border-box;
+    padding: 0px 6.4px; /* 20% decrease */
+}
+
+select {
+    width: 100%;
+    height: 25.6px; /* 20% decrease */
+    border: none;
+    outline: 0;
+    border-radius: 3.2px; /* 20% decrease */
+    border: 0.8px solid #cbced4;
+    gap: 12.8px; /* 20% decrease */
+    box-sizing: border-box;
+    padding: 0px 6.4px; /* 20% decrease */
+}
+
+.input-text .input-div span {
+    position: absolute;
+    top: 6.4px; /* 20% decrease */
+    left: 6.4px; /* 20% decrease */
+    font-size: 9.6px; /* 20% decrease */
+    transition: all 0.5s;
+}
+
+.input-div input:focus ~ span,
+.input-div input:valid ~ span {
+    top: -9.6px; /* 20% decrease */
+    left: 3.2px; /* 20% decrease */
+    font-size: 6.4px; /* 20% decrease */
+    font-weight: 600;
+}
+
+.input-div span {
+    top: -9.6px; /* 20% decrease */
+    left: 3.2px; /* 20% decrease */
+    font-size: 6.4px; /* 20% decrease */
+    font-weight: 600;
+}
+
+.input-div select:focus ~ span,
+.input-div select:valid ~ span {
+    top: -9.6px; /* 20% decrease */
+    left: 3.2px; /* 20% decrease */
+    font-size: 6.4px; /* 20% decrease */
+    font-weight: 600;
+}
+
+.checkbox {
+    margin-top: 19.2px; /* 20% decrease */
+    display: flex;
+    align-items: center;
+    gap: 6.4px; /* 20% decrease */
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 3.2px; /* 20% decrease */
+}
+
+.submit_button {
+    margin-top: 6.4px; /* 20% decrease */
+    padding: 6.4px 0; /* 20% decrease */
+    background-color: #304666;
+    color: #fff;
+    border: none;
+    border-radius: 3.2px; /* 20% decrease */
+    cursor: pointer;
+}
+
+.submit_button:hover {
+    background-color: #1a2b3c;
+}
+
+.upload_file {
+    margin-top: 6.4px; /* 20% decrease */
+    padding: 6.4px 0; /* 20% decrease */
+    background-color: #304666;
+    color: #fff;
+    border: none;
+    border-radius: 3.2px; /* 20% decrease */
+    cursor: pointer;
+}
+
+.upload_file:hover {
+    background-color: #1a2b3c;
+}
+
+.custom-file-upload {
+    border: 1.6px dotted #ccc;
+    display: inline-block;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: #f9f9f9;
+}
+
+.san_button {
+    height: 25.6px; /* 20% decrease */
+    width: 80px; /* 20% decrease */
+    border: 1px solid;
+    border-radius: 3.2px; /* 20% decrease */
+    background-color: #304666;
+    border-color: #304666;
+    font-size: 9.6px; /* 20% decrease */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.san_button:hover {
+    background-color: white;
+    color: #000;
+}
+
+.back_button {
+    height: 25.6px; /* 20% decrease */
+    width: 64px; /* 20% decrease */
+    border: 1px solid;
+    border-radius: 3.2px; /* 20% decrease */
+    color: #304666;
+    border-color: #304666;
+    font-size: 9.6px; /* 20% decrease */
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 3.2px; /* 20% decrease */
+    transition: background-color 0.3s;
+}
+
+.back_button:hover {
+    background-color: #EEEEEE;
+}
+
+.next_button {
+    height: 25.6px; /* 20% decrease */
+    width: 64px; /* 20% decrease */
+    border: none;
+    border-radius: 3.2px; /* 20% decrease */
+    background-color: #304666;
+    font-size: 9.6px; /* 20% decrease */
+    color: #fff;
+    cursor: pointer;
+    margin-left: 3.2px; /* 20% decrease */
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.next_button:hover {
+    background-color: #1a2b3c; /* Change the background color on hover */
+}
+
+.congrats {
+    text-align: left;
+    margin-top: 12.8px; /* 20% decrease */
+    font-size: 12px; /* 20% decrease */
+    color: green;
+    animation: fadeIn 1.6s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
+.button-container {
+   display: flex;
+   justify-content: center; /* center horizontally */
+   margin-bottom: 16px; /* add some bottom margin for spacing */
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e4f70f5bb4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wizard-container">
+        <div class="wiz-card">
+            <div class="form">
+                <div class="left-side">
+                    <div class="left-heading">
+                        <strong><h3>Data Upload Wizard</h3></strong>
+                    </div>
+                    <div class="steps-content">
+                        <h3>Step <span class="step-number">1</span></h3>
+                        <p class="step-number-content active">Select or create a project.</p>
+                        <p class="step-number-content d-none">Upload your files.</p>
+                        <p class="step-number-content d-none">View file statistics.</p>
+                        <p class="step-number-content d-none">Sanitize your data.</p>
+                        <p class="step-number-content d-none">Summary</p>
+                    </div>
+                    <ul class="progress-bar">
+                        <li class="active">Project Selection</li>
+                        <li>Document Upload</li>
+                        <li>File Stats</li>
+                        <li>Data Sanitisation</li>
+                        <li>Summary</li>
+                    </ul>
+                </div>
+                <div class="right-side">
+                    <div class="main active">
+                        <div class="content">
+                            <div class="text">
+                                <h2>Get Started by selecting existing project or creating a new one</h2>
+                                <p>Choose a project name or select from existing projects.</p>
+                                <br>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <input type="text" id="newProjectInput" required>
+                                    <span>Create New Project</span>
+                                </div>
+                                <h3 style="margin-top: 4px;">OR</h3>
+                                <div class="input-div">
+                                    <select id="existingProjectSelect">
+                                        <option value="">Select Existing Project</option>
+                                        <option value="Resource Allocations">Resource Allocations</option>
+                                        <option value="Employee Data 2023">Employee Data 2023</option>
+                                        <option value="Project Allocations">Project Allocations</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="next_button" disabled>Next Step</button>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <div class="content">
+                            <div class="text">
+                                <h2>Document Upload</h2>
+                                <p>Upload your files in CSV, XLSX data formats.</p>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="file-upload" class="custom-file-upload">
+                                        <i class="fa fa-cloud-upload"></i> Drag and drop files here or click to upload
+                                        <img src="upload.png" alt="Upload Image" style="max-width: 12%; height: auto; display: block; margin: 0 auto; margin-top: 8px;">
+                                    </label>
+                                    <input id="file-upload" type="file" multiple accept=".csv,.sql,.xlsx" style="display:none;">
+                                </div>
+                            </div>
+                            <p id="fileList"></p>
+                        </div>
+                        <div class="button-container">
+                            <button class="back_button"> Back </button>
+                            <button class="next_button" disabled> Next Step </button>
+                        </div>
+                    </div>
+
+                    <div class="main">
+                        <div class="content">
+                            <div class="text">
+                                <h2>File Stats</h2>
+                                <p>View the statistics of your uploaded files.</p>
+                                <br>
+                                <p>File Names : <span id="file_names"></span></p>
+                                <p>Total File Size : <span id="total_file_size"></span></p>
+                                <p>Total Rows : <span id="total_rows"></span></p>
+                                <p>Total Columns : <span id="total_columns"></span></p>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="back_button"> Back </button>
+                            <button class="next_button"> Next Step </button>
+                        </div>
+                    </div>
+
+                    <div class="main">
+                        <div class="content">
+                            <div class="text">
+                                <h2>Data Sanitisation</h2>
+                                <p>Sanitize your data by fixing missing, corrupted, and null values.</p>
+                                <p>Missing values (rows & columns) : 8 </p>
+                                <p>Corrupted values : 5</p>
+                                <p>Null values : 3</p>
+                            </div>
+                            <br>
+                            <button class="san_button">Auto Fix Data</button>
+                        </div>
+                        <div class="button-container">
+                            <button class="back_button">Back</button>
+                            <button class="next_button">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="main">
+                        <div class="content">
+                            <div class="text">
+                                <h2>Summary</h2>
+                                <br>
+                                <p>Your uploading summarized.</p>
+                                <br>
+                                <div>Great, you have successfully uploaded your files </div>
+                                <div class="congrats">Files Uploaded <i class="fa-solid fa-check"></i></div>
+                                <div class="congrats">Checks Done <i class="fa-solid fa-check"></i></div>
+                                <div class="congrats">Data Sanatized <i class="fa-solid fa-check"></i></div>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="back_button">Back</button>
+                            <button class="next_button">Update</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
